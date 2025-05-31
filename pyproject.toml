@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "todotestproject"
+version = "0.1.0"
+description = "Django project with REST and PostgreSQL"
+authors = ["dimaboro-code <dimka.borovikov@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = ">=5.2.1"
+djangorestframework = "3.16.0"
+djangorestframework-simplejwt = "5.5.0"
+drf-yasg = "1.21.10"
+psycopg2-binary = "2.9.10"
+requests = "2.32.3"
+beautifulsoup4 = "4.13.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
