@@ -7,20 +7,41 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='TechParkCompany',
+            name="TechParkCompany",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('certificate_number', models.CharField(max_length=50, verbose_name='№ СВИД.')),
-                ('issue_date', models.CharField(max_length=50, verbose_name='Дата выдачи')),
-                ('valid_until', models.CharField(max_length=50, verbose_name='Срок действия')),
-                ('bin', models.CharField(max_length=20, verbose_name='БИН')),
-                ('status', models.CharField(max_length=50, verbose_name='Статус')),
-                ('name', models.CharField(max_length=255, verbose_name='Наименование компании')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "certificate_number",
+                    models.CharField(max_length=50, verbose_name="№ СВИД."),
+                ),
+                (
+                    "issue_date",
+                    models.CharField(max_length=50, verbose_name="Дата выдачи"),
+                ),
+                (
+                    "valid_until",
+                    models.CharField(max_length=50, verbose_name="Срок действия"),
+                ),
+                ("bin", models.CharField(max_length=20, verbose_name="БИН")),
+                ("status", models.CharField(max_length=50, verbose_name="Статус")),
+                (
+                    "name",
+                    models.CharField(
+                        max_length=255, verbose_name="Наименование компании"
+                    ),
+                ),
             ],
         ),
     ]

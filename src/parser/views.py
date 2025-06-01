@@ -16,16 +16,18 @@ class TechParkParseView(APIView):
 
         for item in data:
             obj, created_flag = TechParkCompany.objects.get_or_create(
-                certificate_number=item['certificate_number'],
-                defaults=item
+                certificate_number=item["certificate_number"], defaults=item
             )
             if created_flag:
                 created += 1
 
-        return Response({"message": f"Импортировано {created} компаний."}, status=status.HTTP_201_CREATED)
+        return Response(
+            {"message": f"Импортировано {created} компаний."},
+            status=status.HTTP_201_CREATED,
+        )
 
 
 class TechParkCompanyViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = TechParkCompany.objects.all().order_by('certificate_number')
+    queryset = TechParkCompany.objects.all().order_by("certificate_number")
     serializer_class = TechParkCompanySerializer
     permission_classes = [permissions.IsAuthenticated]

@@ -5,4 +5,4 @@ from .models import TechParkCompany
 class TechParkCompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = TechParkCompany
-        fields = '__all__'
+        fields = "__all__"

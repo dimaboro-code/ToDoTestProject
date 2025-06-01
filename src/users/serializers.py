@@ -9,23 +9,23 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password']
+        fields = ["username", "email", "password"]
 
     def create(self, validated_data):
         user = User.objects.create_user(
-            username=validated_data['username'],
-            email=validated_data.get('email', ''),
-            password=validated_data['password']
+            username=validated_data["username"],
+            email=validated_data.get("email", ""),
+            password=validated_data["password"],
         )
         return user
 
 
 class EmailOrUsernameTokenObtainPairSerializer(TokenObtainPairSerializer):
-    username_field = 'login'
+    username_field = "login"
 
     def validate(self, attrs):
-        login = attrs.get('login')
-        password = attrs.get('password')
+        login = attrs.get("login")
+        password = attrs.get("password")
 
         user = User.objects.filter(email=login).first()
         if user:
@@ -40,6 +40,6 @@ class EmailOrUsernameTokenObtainPairSerializer(TokenObtainPairSerializer):
         refresh = self.get_token(user)
 
         return {
-            'refresh': str(refresh),
-            'access': str(refresh.access_token),
+            "refresh": str(refresh),
+            "access": str(refresh.access_token),
         }

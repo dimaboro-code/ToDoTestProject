@@ -12,8 +12,8 @@ def home_redirect(request):
         if user_auth_tuple is not None:
             user, _ = user_auth_tuple
             if user.is_authenticated:
-                return redirect('/tasks/')
+                return redirect("/tasks/")
     except AuthenticationFailed:
         pass
 
-    return redirect('/auth/login/')
+    return redirect("/auth/login/")
