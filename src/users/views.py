@@ -1,3 +1,5 @@
+from django.shortcuts import redirect
+from django.urls import reverse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
@@ -35,7 +37,7 @@ class CookieTokenObtainPairView(TokenObtainPairView):
                 samesite='Lax',
                 path='/',
             )
-            response.data = {'detail': 'Login successful'}
+            response.data = {'detail': 'Login successful', 'redirect_to': reverse('home_redirect')}
 
         return response
 
