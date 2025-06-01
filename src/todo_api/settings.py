@@ -161,3 +161,5 @@ SIMPLE_JWT = {
     'AUTH_COOKIE_PATH': '/',
     'AUTH_COOKIE_SAMESITE': 'Lax',
 }
+
+TEST_RUNNER = "pytest_django.runner.DiscoverRunner"
