@@ -20,8 +20,8 @@
 
 ### 1. Клонируйте репозиторий
 ```bash
-git clone https://github.com/your-username/todo-api.git
-cd todo-api
+git clone https://github.com/dimaboro-code/ToDoTestProject.git
+cd ToDoTestProject
 ```
 
 ### 2. Соберите и запустите контейнеры
